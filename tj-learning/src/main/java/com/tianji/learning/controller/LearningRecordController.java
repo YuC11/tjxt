@@ -26,10 +26,11 @@ public class LearningRecordController {
 
     private final ILearningRecordService recordService;
 
-    @ApiOperation("查询指定课程的学习记录")
+    @ApiOperation("查询当前用户指定课程的学习进度")
     @GetMapping("/course/{courseId}")
     public LearningLessonDTO queryLearningRecordByCourse(
-            @ApiParam(value = "课程id", example = "2") @PathVariable("courseId") Long courseId){
+            @ApiParam(value = "课程id", example = "2")
+            @PathVariable("courseId") Long courseId){
         return recordService.queryLearningRecordByCourse(courseId);
     }
 

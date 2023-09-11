@@ -11,7 +11,10 @@ public enum PlanStatus implements BaseEnum {
     NO_PLAN(0, "没有计划"),
     PLAN_RUNNING(1, "计划进行中"),
     ;
+
+    // 指定JSON序列化枚举时用的值
     @JsonValue
+    // 指定与数据库交互时要做类型转换的值
     @EnumValue
     int value;
     String desc;
@@ -22,7 +25,7 @@ public enum PlanStatus implements BaseEnum {
     }
 
 
-    @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
+    @JsonCreator(mode = JsonCreator.Mode.DELEGATING)    // 指定JSON反序列化时使用的函数
     public static PlanStatus of(Integer value){
         if (value == null) {
             return null;

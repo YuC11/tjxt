@@ -20,6 +20,11 @@ public class LessonChangeListener {
 
     private final ILearningLessonService lessonService;
 
+
+    /**
+     * 监听订单支付或课程报名的消息
+     * @param order 订单信息
+     */
     @RabbitListener(bindings = @QueueBinding(
             value = @Queue(value = "learning.lesson.pay.queue", durable = "true"),
             exchange = @Exchange(name = MqConstants.Exchange.ORDER_EXCHANGE, type = ExchangeTypes.TOPIC),

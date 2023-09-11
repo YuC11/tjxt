@@ -13,7 +13,10 @@ public enum LessonStatus implements BaseEnum {
     FINISHED(2, "已学完"),
     EXPIRED(3, "已过期"),
     ;
+
+    // 指定JSON序列化枚举时用的值
     @JsonValue
+    // 指定与数据库交互时要做类型转换的值
     @EnumValue
     int value;
     String desc;

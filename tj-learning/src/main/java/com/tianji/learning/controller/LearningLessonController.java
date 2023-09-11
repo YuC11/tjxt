@@ -32,7 +32,7 @@ public class LearningLessonController {
     private final ILearningLessonService lessonService;
 
     @GetMapping("/page")
-    @ApiOperation("分页查询我的课表")
+    @ApiOperation("分页查询我的课表 排序字段 latest_learn_time:学习时间排序，create_time:购买时间排序")
     public PageDTO<LearningLessonVO> queryMyLessons(PageQuery query) {
         return lessonService.queryMyLessons(query);
     }
